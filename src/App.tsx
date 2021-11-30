@@ -1,21 +1,22 @@
-import  style from './app.module.scss'
-import { Login } from './components/login'
-import { Router, RouteComponentProps, Link} from "@reach/router";
-import { DarshBoard } from './components/dashboard/indext';
+import style from "./app.module.scss";
+import { Login } from "./components/login";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { NavBar } from "./components/navbar";
+import { Darshboard } from "./components/darshboard";
 
 function App() {
 
-  const Home = (props: RouteComponentProps) => <DarshBoard />
-  const SignIn = (props: RouteComponentProps) => <Login />
-
-  return (
-    <div>
-      <Router>
-        <SignIn path="/"/>
-        <Home path="/dashboard"/>
-      </Router>  
-    </div>
-  )
+	return (
+		<div>
+			<Router>
+				<NavBar />
+				<Routes>
+					<Route path="/" element={<Login />}/>
+					<Route path="/dashboard" element={<Darshboard />}/>
+				</Routes>
+			</Router>
+		</div>
+	);
 }
 
-export default App
+export default App;

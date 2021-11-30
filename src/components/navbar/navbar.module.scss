@@ -1,0 +1,44 @@
+.navbarWrapper {
+	width: 35vh;
+	height: 100%;
+	background: #ffffff;
+	position: fixed;
+	align-items: center;
+	justify-items: center;
+
+	.navLogo {
+		align-items: center;
+		justify-items: center;
+		position: absolute;
+		margin: 10%;
+
+		.logo {
+			color: #ffffff;
+			background: #0080ff;
+			border-radius: 8px;
+			font-size: 20px;
+			font-weight: 800;
+			align-items: center;
+
+			padding: 2px 10px 2px 10px;
+		}
+
+		.logoText {
+			font-size: 25px;
+			font-weight: 600;
+			margin-left: 1vh;
+		}
+	}
+
+	.itensNavBar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+    
+		a {
+			text-decoration: none;
+      color: black;
+		}
+	}
+}

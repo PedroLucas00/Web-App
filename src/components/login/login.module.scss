@@ -11,6 +11,16 @@
 
 	box-shadow: 2px 2px 2px #d6dbdf;
 
+	.logoIcon {
+		top: 0px;
+		margin: 20px;
+		position: absolute;
+		height: 30px;
+		width: 30px;
+		transform: rotate(-20deg);
+		
+	}
+
 	.loginBackgroundRigth {
 		background: #c0392b url(../../assets/wallpaper-login.jpg) no-repeat center;
 		background-size: cover;
@@ -27,7 +37,7 @@
 
 		align-items: center;
 
-		.loginText {	
+		.loginText {
 			padding: 40px;
 			width: 80vh;
 			height: 100%;
@@ -38,12 +48,16 @@
 			align-items: flex-start;
 			justify-content: left;
 			color: #000000;
+			position: absolute;
 
-			h1 {
+			padding-top: 20vh;
+
+			span {
 				display: flex;
 				justify-content: left;
 				position: absolute;
 				font-weight: 800;
+				font-size: 50px;
 				padding-top: 15px;
 			}
 		}
@@ -62,49 +76,102 @@
 
 		ul {
 			list-style: none;
-			
 
 			li {
-				padding: 5px;
+				display: flex;
+				margin: 5px;
 				justify-items: center;
 				align-items: center;
+				width: max-content;
 
-				input {
-					border-radius: 7px;
-					border-color: #d6dbdf;
-					border-style: solid;
-					padding: 10px;
-					width: 50vh;
+				span {
+					display: flex;
+					padding: 5px;
+					justify-items: center;
+					align-items: center;
+
+					input {
+						border-radius: 7px;
+						border-color: #d6dbdf;
+						border-style: solid;
+
+						background: transparent;
+						padding: 10px;
+						padding-left: 40px;
+						width: 50vh;
+						transition: border-color 0.5s;
+
+						&:hover {
+							border-color: #0080ff;
+						}
+					}
+
+					img {
+						margin: 10px;
+						position: absolute;
+						height: 20px;
+						width: 20px;
+					}
 				}
-				
+
 				a {
 					text-decoration: none;
 					font-size: 12px;
-					color: #A0A0A0;
-					
-					&:nth-child(2){
+					margin-top: 30px;
+					color: #a0a0a0;
+
+					&:nth-child(2) {
 						padding-left: 10px;
 					}
 
-					&:hover{
-						color: #0080FF;
+					&:hover {
+						color: #0080ff;
 					}
 				}
-
-				
 			}
 
 			button {
 				display: inline;
-				padding-left: 50vh;
 				border-radius: 10px;
-				right: 0;
+				right: -50px;
 				padding: 15px;
-				
+				margin-top: 30px;
+				position: absolute;
+				align-items: center;
+
 				border: none;
-				background: #0080FF;
+				background: #0080ff;
 				color: #ffffff;
-				font-size: 14px;
+				font-size: 13px;
+			}
+		}
+	}
+
+	.loginEnd{
+		width: 50vh;
+		display: flex;
+		position: absolute;
+		bottom: 10vh;
+		left: 5vh;
+		margin: 10px;
+
+		color: #a0a0a0;
+		font-size: 14px;
+
+		ul {
+			list-style: none;
+
+			span {
+				position: absolute;
+				margin-left: 18vh;
+
+				a {
+					text-decoration: none;
+					color: #0080ff;
+					margin: 5px;
+					
+					right: 0px;
+				}
 			}
 		}
 	}
