@@ -1,5 +1,5 @@
 .navbarWrapper {
-	width: 35vh;
+	width: 32vh;
 	height: 100%;
 	background: #ffffff;
 	position: fixed;
@@ -10,7 +10,8 @@
 		align-items: center;
 		justify-items: center;
 		position: absolute;
-		margin: 10%;
+		margin-left: 12%;
+		margin-top: 20%;
 
 		.logo {
 			color: #ffffff;
@@ -20,7 +21,7 @@
 			font-weight: 800;
 			align-items: center;
 
-			padding: 2px 10px 2px 10px;
+			padding: 2px 8px 2px 10px;
 		}
 
 		.logoText {
@@ -31,21 +32,80 @@
 	}
 
 	.itensNavBar {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    position: absolute;
+		display: flex;
+		position: absolute;
 
-		a {
-			text-decoration: none;
-      color: black;
-      
-      &:hover{
-        color: #0080ff;
-      }
+		margin-top: 18vh;
+		margin-left: 2vh;
 
-      
-    }
+		li {
+			list-style: none;
+			padding: 3vh;
 
+			display: flex;
+			align-items: center;
+			justify-items: center;
+		}
+
+		.navText {
+			font-weight: 500;
+			font-size: 16px;
+
+			a {
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				justify-items: center;
+
+				svg {
+					width: 3vh;
+					height: 3vh;
+				}
+
+				span {
+					padding-left: 5vh;
+					position: absolute;
+				}
+			}
+
+			.isActive {
+				color: #0080ff;
+			}
+
+			.noActive {
+				color: #a0a0a0;
+
+				&:hover {
+					color: #0080ff;
+				}
+			}
+		}
+	}
+
+	.userInfo {
+		position: absolute;
+		display: flex;
+		align-items: center;
+
+		left: 4vh;
+		bottom: 2vh;
+
+		img {
+			width: 40px;
+			height: 40px;
+
+			border-radius: 10px;
+		}
+
+		.userName {
+			font-weight: 500;
+			font-size: 18px;
+			padding-left: 2vh;
+		}
+
+		svg {
+			margin-left: 8vh;
+			color: #0080ff;
+		}
 	}
 }

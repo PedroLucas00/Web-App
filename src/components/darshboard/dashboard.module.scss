@@ -1,0 +1,119 @@
+.dashboardWrapper {
+	background: #fff;
+	position: fixed;
+	margin-left: 32vh;
+	width: 84.5%;
+	height: 100%;
+
+	.dashboardTop {
+		display: flex;
+
+		justify-items: center;
+		align-self: center;
+
+		.searchBox {
+			span {
+				display: flex;
+				padding: 14%;
+				justify-items: center;
+				align-items: center;
+
+				input {
+					border-style: none;
+
+					background: transparent;
+					padding: 10px;
+					padding-left: 40px;
+					width: 50vh;
+					transition: border-color 0.5s;
+
+					&:hover {
+						border-color: #0080ff;
+					}
+				}
+
+				svg {
+					margin: 10px;
+					position: absolute;
+					height: 20px;
+					width: 20px;
+				}
+			}
+		}
+		.userImage {
+			display: flex;
+			position: absolute;
+			align-items: center;
+			right: 0%;
+			padding: 4%;
+
+			img {
+				width: 50px;
+				height: 50px;
+
+				border-radius: 10px;
+				margin-left: 6vh;
+			}
+
+			svg {
+				color: #0080ff;
+			}
+		}
+	}
+
+	.dashboardMain {
+		width: 50%;
+		height: 100%;
+
+		margin: 2%;
+
+		.gameCard {
+      display: flex;
+			width: 100%;
+			height: 40%;
+      align-items: center;
+      justify-items: center;
+
+			background: url(../../assets/r6-wallpaper.jpg) #000 center no-repeat;
+			background-size: cover;
+
+			border-radius: 20px;
+
+			.gameCardInfo {
+				display: list-item;
+        right: 0;
+        justify-content: right;
+				background: rgba(0, 0, 0, 0.7);
+				width: 100%;
+				height: 100%;
+
+				border-radius: 20px;
+
+				img {
+					height: 100%;
+					width: 50%;
+
+					border-bottom-left-radius: 20px;
+				}
+
+				.title {
+					color: #ffffff;
+
+					img {
+						height: 15%;
+						width: 20%;
+					}
+				}
+
+				.subtitle {
+					color: rgba(255, 255, 255, 0.8);
+				}
+
+				button {
+					border: none;
+					border-radius: 10px;
+				}
+			}
+		}
+	}
+}
