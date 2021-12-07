@@ -4,6 +4,26 @@ import { RiNotificationOffLine } from "react-icons/ri";
 import userImage from "../../assets/user-profile.jpg";
 import operatorImage from "../../assets/r6-operator-sledge.png";
 import logoUbi from "../../assets/ubisoft-logo.png";
+import { useState } from "react";
+import Select from "react-dropdown-select";
+
+export const options = [
+	{
+		id: 1,
+		label: "Popular",
+		value: "popular",
+	},
+	{
+		id: 2,
+		label: "New",
+		value: "new",
+	},
+	{
+		id: 3,
+		label: "Most-views",
+		value: "mostViews",
+	},
+];
 
 export const cardsItens = [
 	{
@@ -26,6 +46,8 @@ export const cardsItens = [
 ];
 
 export function Darshboard() {
+	const [option, setOptiops] = useState();
+
 	return (
 		<div className={style.dashboardWrapper}>
 			<div className={style.dashboardTop}>
@@ -45,7 +67,11 @@ export function Darshboard() {
 					<li>
 						<div className={style.gameCard}>
 							<div className={style.gameCardInfo}>
-								<img src={operatorImage} alt="SledgeOperator" />
+								<img
+									className={style.operatorImage}
+									src={operatorImage}
+									alt="SledgeOperator"
+								/>
 								<div className={style.infos}>
 									<ul>
 										<li>
@@ -77,21 +103,33 @@ export function Darshboard() {
 							</div>
 						</div>
 					</li>
-
+					<li>
+						<div className={style.dropdownWrapper}>
+							<span className={style.text}>News</span>
+							<Select
+								className={style.dropdown}
+								options={options}
+								onChange={() => setOptiops(option)}
+							/>
+						</div>
+					</li>
 					<li>
 						<div className={style.listCards}>
-							{cardsItens.map((item, index) => {
-								return (
-									<ul key={index}>
-										<li>
+							<ul>
+								{cardsItens.map((item, index) => {
+									return (
+										<li key={index}>
 											<img src={item.imgUrl} alt={item.title} />
+											<p>
+												<span className={style.title}>{item.title}</span>
+											</p>
+											<p>
+												<span className={style.subtitle}>{item.subtitle}</span>
+											</p>
 										</li>
-										<li className={style.title}>{item.title}</li>
-
-										<li className={style.subtitle}>{item.subtitle}</li>
-									</ul>
-								);
-							})}
+									);
+								})}
+							</ul>
 						</div>
 					</li>
 				</ul>
