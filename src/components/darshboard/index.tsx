@@ -63,76 +63,102 @@ export function Darshboard() {
 				</div>
 			</div>
 			<div className={style.dashboardMain}>
-				<ul>
-					<li>
-						<div className={style.gameCard}>
-							<div className={style.gameCardInfo}>
-								<img
-									className={style.operatorImage}
-									src={operatorImage}
-									alt="SledgeOperator"
-								/>
-								<div className={style.infos}>
-									<ul>
-										<li>
-											<img src={logoUbi} />
-										</li>
+				<div className={style.dashboardCards}>
+					<ul>
+						<li>
+							<div className={style.gameCard}>
+								<div className={style.gameCardInfo}>
+									<img
+										className={style.operatorImage}
+										src={operatorImage}
+										alt="SledgeOperator"
+									/>
+									<div className={style.infos}>
+										<ul>
+											<li>
+												<img src={logoUbi} />
+											</li>
 
-										<li>
-											<span className={style.title}>
-												Black Dragons VS FazeClan - Invictional
-											</span>
-										</li>
+											<li>
+												<span className={style.title}>
+													Black Dragons VS FazeClan - Invictional
+												</span>
+											</li>
 
-										<li>
-											<span className={style.subtitle}>
-												RainBow Six <span className={style.circle} />
-												<img
-													src="https://cdn-icons-png.flaticon.com/512/3022/3022546.png"
-													alt="brazilFlag"
-												/>
-												Brazil
-											</span>
-										</li>
+											<li>
+												<span className={style.subtitle}>
+													RainBow Six <span className={style.circle} />
+													<img
+														src="https://cdn-icons-png.flaticon.com/512/3022/3022546.png"
+														alt="brazilFlag"
+													/>
+													Brazil
+												</span>
+											</li>
 
-										<li>
-											<button>Watch</button>
-										</li>
-									</ul>
+											<li>
+												<button>Watch</button>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						<div className={style.dropdownWrapper}>
-							<span className={style.text}>News</span>
-							<Select
-								className={style.dropdown}
-								options={options}
-								onChange={() => setOptiops(option)}
-							/>
-						</div>
-					</li>
-					<li>
-						<div className={style.listCards}>
-							<ul>
-								{cardsItens.map((item, index) => {
-									return (
-										<li key={index}>
-											<img src={item.imgUrl} alt={item.title} />
-											<p>
-												<span className={style.title}>{item.title}</span>
-											</p>
-											<p>
-												<span className={style.subtitle}>{item.subtitle}</span>
-											</p>
-										</li>
-									);
-								})}
-							</ul>
-						</div>
-					</li>
-				</ul>
+						</li>
+						<li>
+							<div className={style.dropdownWrapper}>
+								<span className={style.text}>News</span>
+								<Select
+									className={style.dropdown}
+									options={options}
+									onChange={() => setOptiops(option)}
+								/>
+							</div>
+						</li>
+						<li>
+							<div className={style.listCards}>
+								<ul>
+									{cardsItens.map((item, index) => {
+										return (
+											<li key={index}>
+												<img src={item.imgUrl} alt={item.title} />
+												<p>
+													<span className={style.title}>{item.title}</span>
+												</p>
+												<p>
+													<span className={style.subtitle}>
+														{item.subtitle}
+													</span>
+												</p>
+											</li>
+										);
+									})}
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div className={style.matchBox}>
+					<ul>
+						<li>
+							<span className={style.title}>Rainbow Six</span>
+							<span className={style.subtitle}>
+								Group stage - Matchday 1 of 5
+							</span>
+							<span className={style.liveBtn}>Live</span>
+						</li>
+						<li>
+							<span>
+								<img src={""} />
+								BlackDragons
+							</span>
+							<span>2 : 0</span>
+							<span>
+								<img src={""} />
+								FazeClan
+							</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div className={style.dashboardBottom}></div>
 		</div>
