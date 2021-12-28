@@ -19,7 +19,6 @@ function App() {
 
 	const routeResults = useRoutes(routes);
 
-	console.log(routeResults);
 	return (
 		<div className="App">
 			{!id
