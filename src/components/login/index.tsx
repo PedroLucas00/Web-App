@@ -1,5 +1,5 @@
 import { useNavigate } from "@reach/router";
-import { navigate } from "hookrouter";
+import { navigate, A } from "hookrouter";
 import { FormEvent, useState } from "react";
 import { AuthProvider } from "../../contexts/auth";
 import { api } from "../../service/api";
@@ -23,7 +23,7 @@ export function Login() {
 			setPassALert(true);
 			console.log(passAlert);
 		} else {
-			const user = await api.post("login", {
+			const user = await api.post("auth/login", {
 				email: email,
 				password: password,
 			});
@@ -32,6 +32,7 @@ export function Login() {
 				alert("Usuario não cadastrado");
 			} else {
 				navigate("/dashboard", true);
+				localStorage.setItem("@user:token", user.data.token);
 				localStorage.setItem("@user:id", user.data.id);
 			}
 
@@ -44,7 +45,7 @@ export function Login() {
 		<div className={style.loginWrapper}>
 			<img
 				className={style.logoIcon}
-				src="https://cdn-icons-png.flaticon.com/512/686/686589.png"
+				src="https://www.figma.com/file/hosWFu9uUEsBfEplskWnEi/I.A-Experience?type=design&node-id=123-99&t=dy7cvqHyu63divs8-4"
 				alt="gamerLogo"
 			/>
 			<form action="dashboard" className={style.loginForm}>
@@ -91,7 +92,7 @@ export function Login() {
 							</span>
 							<span
 								className={
-								 passAlert ? style.errPass : style.errNoActive
+									passAlert ? style.errPass : style.errNoActive
 								}
 							>
 								Senha inválida
@@ -99,7 +100,7 @@ export function Login() {
 						</p>
 					</li>
 					<li>
-						<a href="#">Register</a> <a href="#">Forgot Password?</a>{" "}
+						<A href="/register">Register</A> <a href="#">Forgot Password?</a>{" "}
 						<button type="submit" onClick={login}>
 							Sign In
 						</button>
@@ -107,12 +108,12 @@ export function Login() {
 				</ul>
 			</form>
 			<div className={style.loginBackgroundRigth}>
-				<div className={style.loginText}>
+				{/* <div className={style.loginText}>
 					Start your
 					<span>Journey</span>
-				</div>
+				</div> */}
 			</div>
-			<div className={style.loginEnd}>
+			{/* <div className={style.loginEnd}>
 				<ul>
 					<li>
 						Login with
@@ -123,7 +124,7 @@ export function Login() {
 						</span>
 					</li>
 				</ul>
-			</div>
+			</div> */}
 		</div>
 	);
 }

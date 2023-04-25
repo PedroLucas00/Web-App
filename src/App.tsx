@@ -3,15 +3,13 @@ import { Login } from "./components/login";
 import { NavBar } from "./components/navbar";
 import { Darshboard } from "./components/darshboard";
 import { useRoutes, useRedirect, navigate } from "hookrouter";
-import { Trending } from "./components/trending";
-import { Match } from "./components/match";
 import { NotFound } from "./components/notFound";
+import { Register } from "./components/register/register";
 
 const routes = {
 	"/login": () => <Login />,
 	"/dashboard": () => <Darshboard />,
-	"/trending": () => <Trending />,
-	"/watch": () => <Match />,
+	'/register': () => <Register />
 };
 
 function App() {
